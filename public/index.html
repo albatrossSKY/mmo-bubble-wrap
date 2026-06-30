@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MMO Bubble Wrap — Pop Together</title>
+  <meta name="description" content="A massive sheet of 50,000 virtual bubbles shared by everyone on the internet. Pop bubbles in real-time with people worldwide.">
+  <meta property="og:title" content="MMO Bubble Wrap — Pop Together">
+  <meta property="og:description" content="50,000 bubbles. One shared sheet. Pop together in real-time.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#080c22">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bubbleCanvas"></canvas>
+
+  <!-- ─── HUD Overlay ─── -->
+  <header class="hud-top" id="hudTop">
+    <div class="hud-panel hud-brand">
+      <h1>🫧 MMO Bubble Wrap</h1>
+      <p class="subtitle">One sheet. Everyone. Real-time.</p>
+    </div>
+    <div class="hud-panel hud-stats">
+      <div class="stat" id="statOnline">
+        <div class="stat-dot-wrap"><span class="stat-dot" id="statusDot"></span></div>
+        <span class="stat-value" id="onlineCount">—</span>
+        <span class="stat-label">Online</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-value" id="poppedCount">—</span>
+        <span class="stat-label">Popped</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-value" id="remainingCount">—</span>
+        <span class="stat-label">Remaining</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress -->
+  <div class="hud-panel hud-progress" id="hudProgress">
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="progress-pct" id="progressPct">0%</span>
+  </div>
+
+  <!-- Bottom controls -->
+  <footer class="hud-bottom" id="hudBottom">
+    <div class="hud-panel hud-zoom">
+      <button id="btnZoomIn" title="Zoom in" aria-label="Zoom in">＋</button>
+      <button id="btnZoomOut" title="Zoom out" aria-label="Zoom out">−</button>
+      <button id="btnReset" title="Reset view" aria-label="Reset view">⟲</button>
+    </div>
+    <div class="hud-panel hud-conn" id="connPanel">
+      <span class="conn-dot" id="connDot"></span>
+      <span id="connLabel">Connecting…</span>
+    </div>
+  </footer>
+
+  <!-- First-visit hint -->
+  <div class="hint" id="hint">Click a bubble to pop it! 🫧</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
